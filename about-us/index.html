@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.about.title}}</title>
+  <meta name="description" content="{{t.about.meta_description}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{t.about.title}}">
+  <meta property="og:description" content="{{t.about.meta_description}}">
+  <meta property="og:url" content="https://www.ivypi.org/about-us/">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta property="og:image" content="https://www.ivypi.org/assets/images/selena.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{t.about.title}}">
+  <meta name="twitter:description" content="{{t.about.meta_description}}">
+  <meta name="twitter:image" content="https://www.ivypi.org/assets/images/selena.jpg">
+  <link rel="canonical" href="https://www.ivypi.org/about-us/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "/about-us/",
+        "url": "/about-us/",
+        "name": "{{t.about.jsonld_page_name}}",
+        "isPartOf": { "@id": "/#website" },
+        "primaryImageOfPage": { "@id": "/about-us/#primaryimage" },
+        "image": { "@id": "/about-us/#primaryimage" },
+        "thumbnailUrl": "/assets/images/selena.jpg",
+        "datePublished": "2023-06-28T01:20:36+00:00",
+        "dateModified": "2025-07-31T05:11:12+00:00",
+        "description": "{{t.about.meta_description}}",
+        "breadcrumb": { "@id": "/about-us/#breadcrumb" },
+        "inLanguage": "en-US",
+        "potentialAction": [{ "@type": "ReadAction", "target": ["/about-us/"] }]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "/about-us/#primaryimage",
+        "url": "/assets/images/selena.jpg",
+        "contentUrl": "/assets/images/selena.jpg",
+        "width": 1170,
+        "height": 1413
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/about-us/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          { "@type": "ListItem", "position": 2, "name": "{{t.about.jsonld_breadcrumb_about}}" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "{{t.home.jsonld_org_name}}",
+        "description": "{{t.home.jsonld_site_description}}",
+        "publisher": { "@id": "/#organization" },
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "/?s={search_term_string}" },
+          "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+        }],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "{{t.home.jsonld_org_name}}",
+        "alternateName": "{{t.home.jsonld_org_alt}}",
+        "url": "/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "/#/schema/logo/image/",
+          "url": "/assets/images/logo.jpg",
+          "contentUrl": "/assets/images/logo.jpg",
+          "width": 1200,
+          "height": 446,
+          "caption": "{{t.home.jsonld_org_name}}"
+        },
+        "image": { "@id": "/#/schema/logo/image/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-jost text-gray-800 bg-white body-loading">
+
+
+  <div id="header-placeholder"></div>
+
+  <!-- Founder Profile -->
+  <section class="py-24 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-serif-display font-normal text-brand-navy mb-8">{{t.about.founder_name}}</h2>
+      <img
+        src="/assets/images/selena.webp"
+        alt="{{t.about.founder_img_alt}}"
+        class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover mx-auto mb-6 shadow-lg"
+        loading="lazy"
+      >
+      <p class="text-lg text-gray-600 leading-relaxed">
+        {{t.about.founder_subtitle}}<br>
+        {{t.about.founder_credentials}}
+      </p>
+    </div>
+  </section>
+
+  <!-- Tabs: Mission / Vision / Values -->
+  <section class="py-16 px-4 bg-gray-50" data-animate>
+    <div class="max-w-3xl mx-auto" data-tabs>
+      <div class="flex border-b border-gray-300 mb-8">
+        <button data-tab-btn="mission" class="flex-1 py-3 px-4 text-center font-semibold text-brand-navy border-b-2 border-brand-navy transition-colors">{{t.about.tab_mission}}</button>
+        <button data-tab-btn="vision" class="flex-1 py-3 px-4 text-center font-semibold text-gray-500 border-b-2 border-transparent hover:text-brand-navy transition-colors">{{t.about.tab_vision}}</button>
+        <button data-tab-btn="values" class="flex-1 py-3 px-4 text-center font-semibold text-gray-500 border-b-2 border-transparent hover:text-brand-navy transition-colors">{{t.about.tab_values}}</button>
+      </div>
+      <div data-tab-panel="mission" class="text-center text-lg text-gray-700 leading-relaxed">
+        {{t.about.mission_text}}
+      </div>
+      <div data-tab-panel="vision" class="text-center text-lg text-gray-700 leading-relaxed hidden">
+        {{t.about.vision_text}}
+      </div>
+      <div data-tab-panel="values" class="text-center text-lg text-gray-700 leading-relaxed hidden">
+        {{t.about.values_text}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="py-24 px-4" data-animate>
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy mb-4">{{t.about.team_heading}}</h3>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        {{t.about.team_text}}
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-24 px-4 bg-gray-50" data-animate>
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy text-center mb-10">{{t.about.faq_heading}}</h3>
+      <div data-faq class="space-y-4">
+
+        <div data-faq-item class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+          <button data-faq-q class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-100 transition-colors">
+            <span>{{t.about.faq_1_q}}</span>
+            <svg data-faq-icon class="w-5 h-5 text-brand-navy shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div data-faq-a class="px-6 pb-5 text-gray-600 leading-relaxed hidden">
+            {{t.about.faq_1_a}}
+          </div>
+        </div>
+
+        <div data-faq-item class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+          <button data-faq-q class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-100 transition-colors">
+            <span>{{t.about.faq_2_q}}</span>
+            <svg data-faq-icon class="w-5 h-5 text-brand-navy shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div data-faq-a class="px-6 pb-5 text-gray-600 leading-relaxed hidden">
+            {{t.about.faq_2_a}}
+          </div>
+        </div>
+
+        <div data-faq-item class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+          <button data-faq-q class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-100 transition-colors">
+            <span>{{t.about.faq_3_q}}</span>
+            <svg data-faq-icon class="w-5 h-5 text-brand-navy shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div data-faq-a class="px-6 pb-5 text-gray-600 leading-relaxed hidden">
+            {{t.about.faq_3_a}}
+          </div>
+        </div>
+
+        <div data-faq-item class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+          <button data-faq-q class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-100 transition-colors">
+            <span>{{t.about.faq_4_q}}</span>
+            <svg data-faq-icon class="w-5 h-5 text-brand-navy shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div data-faq-a class="px-6 pb-5 text-gray-600 leading-relaxed hidden">
+            {{t.about.faq_4_a}}
+          </div>
+        </div>
+
+        <div data-faq-item class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+          <button data-faq-q class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-100 transition-colors">
+            <span>{{t.about.faq_5_q}}</span>
+            <svg data-faq-icon class="w-5 h-5 text-brand-navy shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div data-faq-a class="px-6 pb-5 text-gray-600 leading-relaxed hidden">
+            {{t.about.faq_5_a}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-4" data-animate>
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-xl md:text-2xl font-jost font-light text-brand-navy mb-6">
+        {{t.about.cta_text}}
+      </h3>
+      <a href="/" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-navy-800 text-white font-medium py-3 px-8 rounded transition-colors">
+        {{t.about.cta_button}}
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-24 px-6" data-animate>
+    <div id="contact-placeholder"></div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

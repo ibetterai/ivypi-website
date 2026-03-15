@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.seminars.title}}</title>
+  <meta name="description" content="{{t.seminars.meta_description}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{t.seminars.title}}">
+  <meta property="og:description" content="{{t.seminars.meta_description}}">
+  <meta property="og:url" content="https://www.ivypi.org/seminars/">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta property="og:image" content="https://www.ivypi.org/assets/images/seminar-poster-fencing.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{t.seminars.title}}">
+  <meta name="twitter:description" content="{{t.seminars.meta_description}}">
+  <meta name="twitter:image" content="https://www.ivypi.org/assets/images/seminar-poster-fencing.jpg">
+  <link rel="canonical" href="https://www.ivypi.org/seminars/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "/seminars/",
+        "url": "/seminars/",
+        "name": "{{t.seminars.jsonld_page_name}}",
+        "isPartOf": { "@id": "/#website" },
+        "primaryImageOfPage": { "@id": "/seminars/#primaryimage" },
+        "image": { "@id": "/seminars/#primaryimage" },
+        "thumbnailUrl": "/assets/images/seminar-poster-fencing.jpg",
+        "datePublished": "2023-07-07T04:51:16+00:00",
+        "dateModified": "2025-03-05T05:19:36+00:00",
+        "description": "{{t.seminars.meta_description}}",
+        "breadcrumb": { "@id": "/seminars/#breadcrumb" },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          { "@type": "ReadAction", "target": ["/seminars/"] }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "/seminars/#primaryimage",
+        "url": "/assets/images/seminar-poster-fencing.jpg",
+        "contentUrl": "/assets/images/seminar-poster-fencing.jpg",
+        "width": 1242,
+        "height": 2208
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/seminars/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          { "@type": "ListItem", "position": 2, "name": "{{t.seminars.jsonld_breadcrumb}}" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "{{t.home.jsonld_org_name}}",
+        "description": "{{t.home.jsonld_site_description}}",
+        "publisher": { "@id": "/#organization" },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "/?s={search_term_string}" },
+            "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "{{t.home.jsonld_org_name}}",
+        "alternateName": "{{t.home.jsonld_org_alt}}",
+        "url": "/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "/#/schema/logo/image/",
+          "url": "/assets/images/logo.jpg",
+          "contentUrl": "/assets/images/logo.jpg",
+          "width": 1200,
+          "height": 446,
+          "caption": "{{t.home.jsonld_org_name}}"
+        },
+        "image": { "@id": "/#/schema/logo/image/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-jost text-gray-800 bg-white body-loading">
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
+    <!-- Header Section -->
+    <section class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-serif-display font-normal text-brand-navy mb-6">
+        {{t.seminars.heading}}
+      </h2>
+      <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+        {{t.seminars.intro}}
+        <br><br>
+        {{t.seminars.intro_2}}
+      </p>
+    </section>
+
+    <!-- Upcoming Seminars -->
+    <section class="mb-16" data-animate>
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-center text-brand-navy mb-4">
+        {{t.seminars.upcoming_heading}}
+      </h3>
+      <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-6"></div>
+      <h4 class="text-xl font-normal text-center text-gray-500">{{t.seminars.upcoming_text}}</h4>
+    </section>
+
+    <!-- Past Seminars -->
+    <section data-animate>
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-center text-brand-navy mb-4">
+        {{t.seminars.past_heading}}
+      </h3>
+      <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-12"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Seminar 1: Fencing -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden brand-card border border-gray-200" data-animate>
+          <img
+            src="/assets/images/seminar-poster-fencing.webp"
+            alt="{{t.seminars.seminar_1_poster_alt}}"
+            class="w-full object-cover"
+            loading="lazy"
+          >
+          <div class="p-5">
+            <h4 class="text-lg font-jost font-normal text-brand-navy mb-2">
+              {{t.seminars.seminar_1_title}}
+            </h4>
+            <p class="text-sm text-gray-600 mb-1">
+              {{t.seminars.seminar_1_host}}
+            </p>
+            <p class="text-sm text-brand-blue font-medium">{{t.seminars.seminar_1_date}}</p>
+          </div>
+        </div>
+
+        <!-- Seminar 2: Tips & Tricks -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden brand-card border border-gray-200" data-animate>
+          <img
+            src="/assets/images/seminar-poster-tips.webp"
+            alt="{{t.seminars.seminar_2_poster_alt}}"
+            class="w-full object-cover"
+            loading="lazy"
+          >
+          <div class="p-5">
+            <h4 class="text-lg font-jost font-normal text-brand-navy mb-2">
+              {{t.seminars.seminar_2_title}}
+            </h4>
+            <p class="text-sm text-gray-600 mb-1">
+              {{t.seminars.seminar_2_host}}
+            </p>
+            <p class="text-sm text-brand-blue font-medium">{{t.seminars.seminar_2_date}}</p>
+          </div>
+        </div>
+
+        <!-- Seminar 3: Senior Year -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden brand-card border border-gray-200" data-animate>
+          <img
+            src="/assets/images/seminar-poster-senior-year.webp"
+            alt="{{t.seminars.seminar_3_poster_alt}}"
+            class="w-full object-cover"
+            loading="lazy"
+          >
+          <div class="p-5">
+            <h4 class="text-lg font-jost font-normal text-brand-navy mb-2">
+              {{t.seminars.seminar_3_title}}
+            </h4>
+            <p class="text-sm text-gray-600 mb-1">
+              {{t.seminars.seminar_3_host}}
+            </p>
+            <p class="text-sm text-brand-blue font-medium">{{t.seminars.seminar_3_date}}</p>
+          </div>
+        </div>
+
+        <!-- Seminar 4: Parents -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden brand-card border border-gray-200" data-animate>
+          <img
+            src="/assets/images/seminar-poster-parents.webp"
+            alt="{{t.seminars.seminar_4_poster_alt}}"
+            class="w-full object-cover"
+            loading="lazy"
+          >
+          <div class="p-5">
+            <h4 class="text-lg font-jost font-normal text-brand-navy mb-2">
+              {{t.seminars.seminar_4_title}}
+            </h4>
+            <p class="text-sm text-gray-600 mb-1">
+              {{t.seminars.seminar_4_host}}
+            </p>
+            <p class="text-sm text-brand-blue font-medium">{{t.seminars.seminar_4_date}}</p>
+          </div>
+        </div>
+
+        <!-- Seminar 5: Extracurricular -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden brand-card border border-gray-200" data-animate>
+          <img
+            src="/assets/images/seminar-poster-extracurricular.webp"
+            alt="{{t.seminars.seminar_5_poster_alt}}"
+            class="w-full object-cover"
+            loading="lazy"
+          >
+          <div class="p-5">
+            <h4 class="text-lg font-jost font-normal text-brand-navy mb-2">
+              {{t.seminars.seminar_5_title}}
+            </h4>
+            <p class="text-sm text-gray-600 mb-1">
+              {{t.seminars.seminar_5_host}}
+            </p>
+            <p class="text-sm text-brand-blue font-medium">{{t.seminars.seminar_5_date}}</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Main JS -->
+  <script defer src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

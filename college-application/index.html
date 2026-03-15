@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.college_application.title}}</title>
+  <meta name="description" content="{{t.college_application.meta_description}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{t.college_application.title}}">
+  <meta property="og:description" content="{{t.college_application.meta_description}}">
+  <meta property="og:url" content="https://www.ivypi.org/college-application/">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta property="og:image" content="https://www.ivypi.org/assets/images/help.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{t.college_application.title}}">
+  <meta name="twitter:description" content="{{t.college_application.meta_description}}">
+  <meta name="twitter:image" content="https://www.ivypi.org/assets/images/help.jpeg">
+  <link rel="canonical" href="https://www.ivypi.org/college-application/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "/college-application/",
+        "url": "/college-application/",
+        "name": "{{t.college_application.jsonld_page_name}}",
+        "isPartOf": { "@id": "/#website" },
+        "primaryImageOfPage": { "@id": "/college-application/#primaryimage" },
+        "image": { "@id": "/college-application/#primaryimage" },
+        "thumbnailUrl": "/assets/images/help.jpeg",
+        "datePublished": "2023-06-28T01:20:33+00:00",
+        "dateModified": "2025-03-05T06:37:14+00:00",
+        "description": "{{t.college_application.meta_description}}",
+        "breadcrumb": { "@id": "/college-application/#breadcrumb" },
+        "inLanguage": "en-US",
+        "potentialAction": [{ "@type": "ReadAction", "target": ["/college-application/"] }]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "/college-application/#primaryimage",
+        "url": "/assets/images/help.jpeg",
+        "contentUrl": "/assets/images/help.jpeg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/college-application/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          { "@type": "ListItem", "position": 2, "name": "{{t.college_application.jsonld_breadcrumb}}" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "{{t.home.jsonld_org_name}}",
+        "description": "{{t.home.jsonld_site_description}}",
+        "publisher": { "@id": "/#organization" },
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "/?s={search_term_string}" },
+          "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+        }],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "{{t.home.jsonld_org_name}}",
+        "alternateName": "{{t.home.jsonld_org_alt}}",
+        "url": "/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "/#/schema/logo/image/",
+          "url": "/assets/images/logo.jpg",
+          "contentUrl": "/assets/images/logo.jpg",
+          "width": 1200,
+          "height": 446,
+          "caption": "{{t.home.jsonld_org_name}}"
+        },
+        "image": { "@id": "/#/schema/logo/image/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-jost text-gray-800 bg-white body-loading">
+
+  <div id="header-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="py-20 md:py-32 px-4 bg-brand-light">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-serif-display font-normal text-brand-navy mb-4">{{t.college_application.hero_heading}}</h2>
+      <p class="text-lg text-gray-600 mb-8">{{t.college_application.hero_text}}</p>
+      <a href="#application-services" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-navy-800 text-white font-medium py-3 px-8 rounded transition-colors">
+        {{t.college_application.hero_cta}}
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <img src="/assets/images/help.webp" alt="{{t.college_application.hero_img_alt}}" class="mt-10 rounded-md shadow-sm mx-auto max-w-md w-full" loading="lazy">
+    </div>
+  </section>
+
+  <!-- University Logo Grid -->
+  <section class="py-24 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy mb-4">{{t.college_application.results_heading}}</h3>
+      <p class="text-lg text-gray-600 mb-10">{{t.college_application.results_subheading}}</p>
+      <div class="grid grid-cols-3 gap-6 md:gap-8 items-center justify-items-center">
+        <a href="https://www.cornell.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-cornell.webp" alt="Cornell University" class="school-logo" loading="lazy"></a>
+        <a href="https://www.mit.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-mit.webp" alt="MIT" class="school-logo" loading="lazy"></a>
+        <a href="https://www.stanford.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-stanford.webp" alt="Stanford University" class="school-logo" loading="lazy"></a>
+        <a href="https://www.usc.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-usc.webp" alt="USC" class="school-logo" loading="lazy"></a>
+        <a href="https://www.ucla.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-ucla.webp" alt="UCLA" class="school-logo" loading="lazy"></a>
+        <a href="https://www.berkeley.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-uc-berkeley.webp" alt="UC Berkeley" class="school-logo" loading="lazy"></a>
+        <a href="https://www.uci.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-uc-irvine.webp" alt="UC Irvine" class="school-logo" loading="lazy"></a>
+        <a href="https://www.ucsd.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-uc-san-diego.webp" alt="UC San Diego" class="school-logo" loading="lazy"></a>
+        <a href="https://www.ucdavis.edu" target="_blank" rel="noopener" class="logo-cell"><img src="/assets/images/uni-uc-davis.webp" alt="UC Davis" class="school-logo" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Services Intro -->
+  <section class="py-24 px-4" id="application-services" data-animate>
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy mb-4">{{t.college_application.intro_heading}}</h3>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        {{t.college_application.intro_text}}
+      </p>
+    </div>
+  </section>
+
+  <!-- Service: Choosing A College -->
+  <section class="py-16 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="/assets/images/choosing.webp" alt="Choosing a college" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.choosing_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.choosing_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.choosing_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Personal Statements -->
+  <section class="py-16 px-4" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+      <img src="/assets/images/typing.webp" alt="Writing college essays" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.essays_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.essays_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.essays_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Application Documents -->
+  <section class="py-16 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="/assets/images/application.webp" alt="Application documents" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.documents_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.documents_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.documents_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Letter of Recommendation -->
+  <section class="py-16 px-4" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+      <img src="/assets/images/letter-of-rec.webp" alt="Letter of recommendation" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.recommendation_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.recommendation_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.recommendation_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Interview Preparation -->
+  <section class="py-16 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="/assets/images/interview.webp" alt="Interview preparation" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.interview_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.interview_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.interview_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Strategic Planning -->
+  <section class="py-16 px-4" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+      <img src="/assets/images/strategy.webp" alt="Strategic planning" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.strategic_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.strategic_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.strategic_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Resume Building -->
+  <section class="py-16 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="/assets/images/resume.webp" alt="Resume building" class="w-full md:w-1/2 rounded-md shadow-sm object-cover aspect-[4/3]" loading="lazy">
+      <div class="md:w-1/2">
+        <h4 class="text-xl md:text-2xl font-jost font-normal text-brand-navy mb-4">{{t.college_application.resume_title}}</h4>
+        <p class="text-gray-600 leading-relaxed mb-5">{{t.college_application.resume_text}}</p>
+        <div class="flex items-start gap-3 bg-brand-light border-l-4 border-brand-blue rounded-r-lg p-4">
+          <svg class="w-6 h-6 text-brand-navy shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          <p class="text-sm text-brand-dark font-medium">{{t.college_application.resume_tip}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Applying High School Students -->
+  <section class="py-24 px-6" data-animate>
+    <div data-component="pricing"
+         data-heading="{{t.college_application.pricing_heading}}"
+         data-text="{{t.college_application.pricing_text}}"></div>
+  </section>
+
+  <!-- CTA: Seminars -->
+  <section class="bg-brand-cta text-white py-20 px-6" data-animate>
+    <div data-component="cta-banner"
+         data-heading="{{t.college_application.cta_heading}}"
+         data-text="{{t.college_application.cta_text}}"
+         data-link="/seminars/"
+         data-link-text="{{t.college_application.cta_link_text}}"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-24 px-6" data-animate>
+    <div id="contact-placeholder"></div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

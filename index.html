@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="{{t.home.meta_description}}" name="description" />
+    <meta content="index, follow" name="robots" />
+    <title>{{t.home.title}}</title>
+    <meta content="en_US" property="og:locale" />
+    <meta content="website" property="og:type" />
+    <meta content="{{t.home.title}}" property="og:title" />
+    <meta content="{{t.home.meta_description}}" property="og:description" />
+    <meta content="https://www.ivypi.org/" property="og:url" />
+    <meta content="{{t.home.jsonld_org_name}}" property="og:site_name" />
+    <meta content="https://www.ivypi.org/assets/images/home-hero.jpeg" property="og:image" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="{{t.home.title}}" name="twitter:title" />
+    <meta content="{{t.home.meta_description}}" name="twitter:description" />
+    <meta content="https://www.ivypi.org/assets/images/home-hero.jpeg" name="twitter:image" />
+    <link href="https://www.ivypi.org/" rel="canonical" />
+    <link href="/assets/images/favicon-32.jpg" rel="icon" sizes="32x32" />
+    <link href="/assets/images/favicon-192.jpg" rel="icon" sizes="192x192" />
+    <link href="/assets/images/favicon-180.jpg" rel="apple-touch-icon" />
+    <meta content="/assets/images/favicon-270.jpg" name="msapplication-TileImage" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+    <link rel="preload" as="image" href="/assets/images/home-hero.webp" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <style>
+      /* Testimonial carousel — crossfade */
+      #testimonial-carousel { position: relative; }
+      .testimonial-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+      }
+      .testimonial-card.active {
+        position: relative;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Marquee — slower for elegance */
+      @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .marquee-track {
+        display: flex;
+        animation: marquee 50s linear infinite;
+        width: max-content;
+        will-change: transform;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-track { animation-play-state: paused; }
+      }
+      .marquee-track img {
+        filter: grayscale(100%);
+        opacity: 0.45;
+        transition: filter 0.5s ease, opacity 0.5s ease;
+      }
+      .marquee-track img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* Service card hover — subtle shadow, image zoom handled via group-hover */
+      .service-card-v2 {
+        transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .service-card-v2:hover {
+        box-shadow: 0 8px 24px rgba(4, 77, 118, 0.08);
+      }
+
+      /* Value prop card hover */
+      .value-card {
+        transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .value-card:hover {
+        box-shadow: 0 8px 24px rgba(4, 77, 118, 0.08);
+      }
+
+      /* Hero image wrapper */
+      .hero-image-wrap {
+        background: linear-gradient(135deg, #9DC3D5 0%, #044d76 100%);
+        padding: 3px;
+        border-radius: 0.75rem;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "/",
+            "url": "/",
+            "name": "{{t.home.jsonld_page_name}}",
+            "isPartOf": { "@id": "/#website" },
+            "about": { "@id": "/#organization" },
+            "primaryImageOfPage": { "@id": "/#primaryimage" },
+            "image": { "@id": "/#primaryimage" },
+            "thumbnailUrl": "/assets/images/home-hero.jpeg",
+            "datePublished": "2023-06-28T01:20:19+00:00",
+            "dateModified": "2025-05-16T17:15:01+00:00",
+            "description": "{{t.home.jsonld_page_description}}",
+            "breadcrumb": { "@id": "/#breadcrumb" },
+            "inLanguage": "en-US",
+            "potentialAction": [{ "@type": "ReadAction", "target": ["/"] }]
+          },
+          {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "/#primaryimage",
+            "url": "/assets/images/home-hero.jpeg",
+            "contentUrl": "/assets/images/home-hero.jpeg"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "{{t.home.jsonld_breadcrumb_home}}" }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "/#website",
+            "url": "/",
+            "name": "{{t.home.jsonld_org_name}}",
+            "description": "{{t.home.jsonld_site_description}}",
+            "publisher": { "@id": "/#organization" },
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "/?s={search_term_string}"
+                },
+                "query-input": {
+                  "@type": "PropertyValueSpecification",
+                  "valueRequired": true,
+                  "valueName": "search_term_string"
+                }
+              }
+            ],
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Organization",
+            "@id": "/#organization",
+            "name": "{{t.home.jsonld_org_name}}",
+            "alternateName": "{{t.home.jsonld_org_alt}}",
+            "url": "/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "en-US",
+              "@id": "/#/schema/logo/image/",
+              "url": "/assets/images/logo.jpg",
+              "contentUrl": "/assets/images/logo.jpg",
+              "width": 1200,
+              "height": 446,
+              "caption": "{{t.home.jsonld_org_name}}"
+            },
+            "image": { "@id": "/#/schema/logo/image/" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="font-poppins text-gray-800 antialiased body-loading">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+      <!-- ═══ 1. Hero Section ═══ -->
+      <section class="bg-brand-light w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block text-brand-blue text-sm font-normal tracking-widest uppercase mb-4">{{t.home.hero_label}}</span>
+            <h1 class="font-serif-display text-4xl md:text-5xl lg:text-6xl font-normal text-brand-navy leading-tight mb-6">
+              {{t.home.hero_heading}}
+            </h1>
+            <div class="w-16 h-1 bg-brand-blue rounded mb-8"></div>
+
+            <!-- Stats row -->
+            <div class="grid grid-cols-3 gap-4 mb-10" data-animate-children>
+              <div class="text-center sm:text-left">
+                <p class="font-jost text-3xl md:text-4xl font-light text-brand-navy">{{t.home.stat_1_value}}</p>
+                <p class="text-sm text-brand-dark mt-1">{{t.home.stat_1_label}}</p>
+              </div>
+              <div class="text-center sm:text-left">
+                <p class="font-jost text-3xl md:text-4xl font-light text-brand-navy">{{t.home.stat_2_value}}</p>
+                <p class="text-sm text-brand-dark mt-1">{{t.home.stat_2_label}}</p>
+              </div>
+              <div class="text-center sm:text-left">
+                <p class="font-jost text-3xl md:text-4xl font-light text-brand-navy">{{t.home.stat_3_value}}</p>
+                <p class="text-sm text-brand-dark mt-1">{{t.home.stat_3_label}}</p>
+              </div>
+            </div>
+
+            <!-- Dual CTAs -->
+            <div class="flex flex-wrap gap-4">
+              <a href="#services" class="inline-block bg-brand-navy hover:bg-brand-navy-800 text-white font-medium px-8 py-3 rounded transition-colors duration-200">
+                {{t.home.cta_services}}
+              </a>
+              <a href="/about-us/" class="inline-block border border-brand-navy text-brand-navy font-medium px-8 py-3 rounded hover:bg-brand-navy hover:text-white transition-colors duration-200">
+                {{t.home.cta_about}}
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero image -->
+          <div class="hero-image-wrap">
+            <img
+              src="/assets/images/home-hero.webp"
+              alt="{{t.home.hero_img_alt}}"
+              class="w-full rounded-md"
+              loading="eager"
+              fetchpriority="high"
+              width="1000"
+              height="560"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 2. University Trust Bar ═══ -->
+      <section class="bg-white pt-20 pb-16 overflow-hidden">
+        <p class="text-center text-sm font-medium tracking-widest uppercase text-gray-400 mb-8">{{t.home.trust_bar_heading}}</p>
+        <div class="relative overflow-hidden">
+          <div class="marquee-track">
+            <!-- First set -->
+            <img src="/assets/images/uni-mit.webp" alt="MIT" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-stanford.webp" alt="Stanford University" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-cornell.webp" alt="Cornell University" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-berkeley.webp" alt="UC Berkeley" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-ucla.webp" alt="UCLA" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-usc.webp" alt="USC" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-san-diego.webp" alt="UC San Diego" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-davis.webp" alt="UC Davis" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-irvine.webp" alt="UC Irvine" class="h-10 mx-8 object-contain" />
+            <!-- Duplicate for seamless loop -->
+            <img src="/assets/images/uni-mit.webp" alt="MIT" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-stanford.webp" alt="Stanford University" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-cornell.webp" alt="Cornell University" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-berkeley.webp" alt="UC Berkeley" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-ucla.webp" alt="UCLA" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-usc.webp" alt="USC" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-san-diego.webp" alt="UC San Diego" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-davis.webp" alt="UC Davis" class="h-10 mx-8 object-contain" />
+            <img src="/assets/images/uni-uc-irvine.webp" alt="UC Irvine" class="h-10 mx-8 object-contain" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 3. Why IvyPi ═══ -->
+      <section class="bg-white py-24" data-animate="fade-up">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-serif-display text-3xl md:text-4xl font-normal text-center text-brand-navy mb-4">{{t.home.why_heading}}</h2>
+          <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-14"></div>
+          <div class="grid md:grid-cols-3 gap-8" data-animate-children>
+            <!-- Personalized Strategy -->
+            <div class="value-card bg-white rounded-lg border border-gray-200 p-8 text-center">
+              <div class="flex justify-center mb-5">
+                <div class="w-14 h-14 rounded-full border border-brand-dark/20 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-brand-navy" viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM191.4 .0132C89.44 .3257 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.61 288.9-.2837 191.4 .0132zM192 96.01c-44.13 0-80 35.89-80 79.1C112 184.8 104.8 192 96 192S80 184.8 80 176c0-61.76 50.25-111.1 112-111.1c8.844 0 16 7.159 16 16S200.8 96.01 192 96.01z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="font-jost text-xl font-normal text-brand-navy mb-3">{{t.home.why_1_title}}</h3>
+              <p class="text-brand-dark text-sm leading-relaxed">{{t.home.why_1_text}}</p>
+            </div>
+            <!-- Expert Guidance -->
+            <div class="value-card bg-white rounded-lg border border-gray-200 p-8 text-center">
+              <div class="flex justify-center mb-5">
+                <div class="w-14 h-14 rounded-full border border-brand-dark/20 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-brand-navy" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512zM232 256C232 264 236 271.5 242.7 275.1L338.7 339.1C349.7 347.3 364.6 344.3 371.1 333.3C379.3 322.3 376.3 307.4 365.3 300L280 243.2V120C280 106.7 269.3 96 255.1 96C242.7 96 231.1 106.7 231.1 120L232 256z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="font-jost text-xl font-normal text-brand-navy mb-3">{{t.home.why_2_title}}</h3>
+              <p class="text-brand-dark text-sm leading-relaxed">{{t.home.why_2_text}}</p>
+            </div>
+            <!-- Proven Results -->
+            <div class="value-card bg-white rounded-lg border border-gray-200 p-8 text-center">
+              <div class="flex justify-center mb-5">
+                <div class="w-14 h-14 rounded-full border border-brand-dark/20 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-brand-navy" viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM272 224h-160C103.2 224 96 216.8 96 208C96 199.2 103.2 192 112 192h160C280.8 192 288 199.2 288 208S280.8 224 272 224z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="font-jost text-xl font-normal text-brand-navy mb-3">{{t.home.why_3_title}}</h3>
+              <p class="text-brand-dark text-sm leading-relaxed">{{t.home.why_3_text}}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 4. Services ═══ -->
+      <section id="services" class="py-24 bg-white" data-animate="fade-up">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-serif-display text-3xl md:text-4xl font-normal text-center text-brand-navy mb-4">{{t.home.services_heading}}</h2>
+          <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-14"></div>
+          <div class="grid md:grid-cols-3 gap-8" data-animate-children>
+            <!-- College Consulting -->
+            <a href="/college-consulting/" class="service-card-v2 block bg-white rounded-lg border border-gray-200 overflow-hidden no-underline group">
+              <div class="h-52 overflow-hidden">
+                <img src="/assets/images/counselling.webp" alt="{{t.home.service_1_img_alt}}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-jost text-xl font-normal text-brand-navy mb-2">{{t.home.service_1_title}}</h3>
+                <p class="text-brand-dark text-sm leading-relaxed mb-4">{{t.home.service_1_text}}</p>
+                <span class="text-brand-blue font-normal text-sm inline-flex items-center gap-1">{{t.home.learn_more}} <span>&rarr;</span></span>
+              </div>
+            </a>
+            <!-- College Application -->
+            <a href="/college-application/" class="service-card-v2 block bg-white rounded-lg border border-gray-200 overflow-hidden no-underline group">
+              <div class="h-52 overflow-hidden">
+                <img src="/assets/images/help.webp" alt="{{t.home.service_2_img_alt}}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-jost text-xl font-normal text-brand-navy mb-2">{{t.home.service_2_title}}</h3>
+                <p class="text-brand-dark text-sm leading-relaxed mb-4">{{t.home.service_2_text}}</p>
+                <span class="text-brand-blue font-normal text-sm inline-flex items-center gap-1">{{t.home.learn_more}} <span>&rarr;</span></span>
+              </div>
+            </a>
+            <!-- Middle & High School -->
+            <a href="/high-school-application/" class="service-card-v2 block bg-white rounded-lg border border-gray-200 overflow-hidden no-underline group">
+              <div class="h-52 overflow-hidden">
+                <img src="/assets/images/classroom.webp" alt="{{t.home.service_3_img_alt}}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-jost text-xl font-normal text-brand-navy mb-2">{{t.home.service_3_title}}</h3>
+                <p class="text-brand-dark text-sm leading-relaxed mb-4">{{t.home.service_3_text}}</p>
+                <span class="text-brand-blue font-normal text-sm inline-flex items-center gap-1">{{t.home.learn_more}} <span>&rarr;</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 5. Testimonials ═══ -->
+      <section class="bg-white py-24" data-animate="fade-up">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-serif-display text-3xl md:text-4xl font-normal text-center text-brand-navy mb-3">{{t.home.testimonials_heading}}</h2>
+          <p class="text-center text-gray-500 mb-12">{{t.home.testimonials_subheading}}</p>
+
+          <div id="testimonial-carousel" class="relative" data-counter-sep=" / ">
+            <!-- Card 1: Amy Zhao -->
+            <div class="testimonial-card active bg-white rounded-lg border border-gray-200 p-10">
+              <div class="text-5xl text-brand-blue/20 font-serif leading-none mb-3">&ldquo;</div>
+              <div class="flex gap-1 text-brand-blue text-lg mb-5">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-8">
+                {{t.home.testimonial_1_text}}
+              </p>
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/uni-mit.webp" alt="MIT" class="h-8 w-8 object-contain" loading="lazy" />
+                <p class="font-medium text-brand-navy text-sm">{{t.home.testimonial_1_name}}<span class="font-normal text-gray-500"> · {{t.home.testimonial_1_school}}</span></p>
+              </div>
+            </div>
+            <!-- Card 2: Julia Shang -->
+            <div class="testimonial-card bg-white rounded-lg border border-gray-200 p-10">
+              <div class="text-5xl text-brand-blue/20 font-serif leading-none mb-3">&ldquo;</div>
+              <div class="flex gap-1 text-brand-blue text-lg mb-5">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-8">
+                {{t.home.testimonial_2_text}}
+              </p>
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/uni-cornell.webp" alt="Cornell" class="h-8 w-8 object-contain" loading="lazy" />
+                <p class="font-medium text-brand-navy text-sm">{{t.home.testimonial_2_name}}<span class="font-normal text-gray-500"> · {{t.home.testimonial_2_school}}</span></p>
+              </div>
+            </div>
+            <!-- Card 3: Jennifer Espinoza -->
+            <div class="testimonial-card bg-white rounded-lg border border-gray-200 p-10">
+              <div class="text-5xl text-brand-blue/20 font-serif leading-none mb-3">&ldquo;</div>
+              <div class="flex gap-1 text-brand-blue text-lg mb-5">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-8">
+                {{t.home.testimonial_3_text}}
+              </p>
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/uni-stanford.webp" alt="Stanford" class="h-8 w-8 object-contain" loading="lazy" />
+                <p class="font-medium text-brand-navy text-sm">{{t.home.testimonial_3_name}}<span class="font-normal text-gray-500"> · {{t.home.testimonial_3_school}}</span></p>
+              </div>
+            </div>
+            <!-- Card 4: Angela Cui -->
+            <div class="testimonial-card bg-white rounded-lg border border-gray-200 p-10">
+              <div class="text-5xl text-brand-blue/20 font-serif leading-none mb-3">&ldquo;</div>
+              <div class="flex gap-1 text-brand-blue text-lg mb-5">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-8">
+                {{t.home.testimonial_4_text}}
+              </p>
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/uni-cornell.webp" alt="Cornell" class="h-8 w-8 object-contain" loading="lazy" />
+                <p class="font-medium text-brand-navy text-sm">{{t.home.testimonial_4_name}}<span class="font-normal text-gray-500"> · {{t.home.testimonial_4_school}}</span></p>
+              </div>
+            </div>
+            <!-- Card 5: Yuxuan Liu -->
+            <div class="testimonial-card bg-white rounded-lg border border-gray-200 p-10">
+              <div class="text-5xl text-brand-blue/20 font-serif leading-none mb-3">&ldquo;</div>
+              <div class="flex gap-1 text-brand-blue text-lg mb-5">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-8">
+                {{t.home.testimonial_5_text}}
+              </p>
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/uni-uc-berkeley.webp" alt="UC Berkeley" class="h-8 w-8 object-contain" loading="lazy" />
+                <p class="font-medium text-brand-navy text-sm">{{t.home.testimonial_5_name}}<span class="font-normal text-gray-500"> · {{t.home.testimonial_5_school}}</span></p>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex items-center justify-center gap-6 mt-10">
+              <button id="testimonial-prev" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:border-brand-navy hover:text-brand-navy transition-colors" aria-label="{{t.home.prev_testimonial}}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <span class="text-sm text-gray-400" id="testimonial-counter">1 / 5</span>
+              <button id="testimonial-next" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:border-brand-navy hover:text-brand-navy transition-colors" aria-label="{{t.home.next_testimonial}}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 6. CTA Banner ═══ -->
+      <section class="bg-brand-cta py-28">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h3 class="font-jost text-2xl md:text-3xl font-light text-white mb-4">{{t.home.cta_heading}}</h3>
+          <p class="text-white/70 mb-12 max-w-2xl mx-auto">{{t.home.cta_text}}</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="/seminars/" class="inline-block bg-white text-brand-navy font-medium px-8 py-3 rounded hover:bg-gray-100 transition-colors duration-200">
+              {{t.home.cta_seminars}}
+            </a>
+            <a href="/about-us/" class="inline-block border border-white/60 text-white font-medium px-8 py-3 rounded hover:bg-white hover:text-brand-navy transition-colors duration-200">
+              {{t.home.cta_contact}}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/assets/js/main.js" defer></script>
+    <script type="module" src="/assets/js/auth.js"></script>
+  </body>
+</html>

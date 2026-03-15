@@ -1,0 +1,65 @@
+<footer class="bg-[#9DC3D5] text-[#044d76]/70 font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+          <img src="/assets/images/logo-wide.webp" alt="{{t.footer.logo_alt}}" class="h-16 w-auto rounded" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-brand-navy font-normal text-lg mb-4">{{t.footer.contact_heading}}</h3>
+        <div class="space-y-2 text-sm">
+          <p>{{t.footer.email_label}} <a href="mailto:support@ivypi.org" class="hover:text-[#044d76] transition-colors">support@ivypi.org</a></p>
+          <p>{{t.footer.phone_label}} <a href="tel:+18402409109" class="hover:text-[#044d76] transition-colors">+1 (840)-240-9109</a></p>
+          <p>{{t.footer.location}}</p>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="text-brand-navy font-normal text-lg mb-4">{{t.footer.quick_links}}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="hover:text-[#044d76] transition-colors">{{t.footer.home}}</a></li>
+          <li><a href="/college-consulting/" class="hover:text-[#044d76] transition-colors">{{t.footer.college_consulting}}</a></li>
+          <li><a href="/college-application/" class="hover:text-[#044d76] transition-colors">{{t.footer.college_application}}</a></li>
+          <li><a href="/high-school-application/" class="hover:text-[#044d76] transition-colors">{{t.footer.high_school_application}}</a></li>
+          <li><a href="/seminars/" class="hover:text-[#044d76] transition-colors">{{t.footer.seminars}}</a></li>
+          <li><a href="/about-us/" class="hover:text-[#044d76] transition-colors">{{t.footer.about_us}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-[#044d76]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-[#044d76]/50">
+      <p>{{t.footer.copyright}}</p>
+      <p class="mt-2">
+        <a href="/privacy-policy/" class="hover:text-[#044d76] transition-colors">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="/terms-of-service/" class="hover:text-[#044d76] transition-colors">Terms of Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Language Selector -->
+<div id="lang-trigger" class="fixed bottom-6 right-6 z-40 cursor-pointer bg-[#044d76] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#015a96] transition-all duration-300 text-sm font-medium">
+  <span class="translate notranslate">{{t.lang.trigger_label}}</span>
+</div>
+
+<!-- Language Dropdown -->
+<div id="lang-dropdown" class="fixed bottom-16 right-6 z-50 hidden bg-white rounded-md shadow-lg border border-gray-200 overflow-hidden min-w-[180px] transition-all duration-300">
+  <a href="{{lang_href_en}}" class="lang-btn block w-full text-left px-4 py-3 hover:bg-[#f6ffff] transition-colors text-sm font-medium text-gray-700 border-b border-gray-100">{{t.lang.english}}</a>
+  <a href="{{lang_href_zh-CN}}" class="lang-btn block w-full text-left px-4 py-3 hover:bg-[#f6ffff] transition-colors text-sm font-medium text-gray-700 border-b border-gray-100">{{t.lang.chinese}}</a>
+  <a href="{{lang_href_es}}" class="lang-btn block w-full text-left px-4 py-3 hover:bg-[#f6ffff] transition-colors text-sm font-medium text-gray-700 border-b border-gray-100">{{t.lang.spanish}}</a>
+  <a href="{{lang_href_ko}}" class="lang-btn block w-full text-left px-4 py-3 hover:bg-[#f6ffff] transition-colors text-sm font-medium text-gray-700">{{t.lang.korean}}</a>
+</div>
+
+<!-- Back to Top -->
+<button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 bg-[#044d76] text-white rounded-full shadow-lg hover:bg-[#015a96] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none flex items-center justify-center" aria-label="{{t.lang.back_to_top}}">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+</button>

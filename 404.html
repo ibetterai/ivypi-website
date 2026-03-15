@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.not_found.title}}</title>
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{t.not_found.title}}">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta property="og:image" content="/assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+</head>
+<body class="font-jost bg-white text-gray-900 body-loading">
+  <div id="header-placeholder"></div>
+
+  <main class="flex items-center justify-center min-h-[calc(100vh-200px)] px-4 py-20">
+    <div class="text-center max-w-2xl">
+      <h1 class="text-9xl font-serif-display font-normal text-brand-navy mb-4">{{t.not_found.heading}}</h1>
+      <h2 class="text-4xl font-serif-display font-normal text-brand-navy mb-4">{{t.not_found.subheading}}</h2>
+      <p class="text-xl text-gray-600 mb-8">{{t.not_found.message}}</p>
+      <a href="/" class="inline-block bg-brand-navy hover:bg-brand-navy-800 text-white font-medium py-3 px-8 rounded transition-colors duration-200 mb-12">{{t.not_found.return_home}}</a>
+      <div class="border-t pt-8">
+        <p class="text-sm text-gray-500 mb-4 uppercase tracking-wide">{{t.not_found.quick_nav}}</p>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <a href="/college-consulting/" class="text-brand-navy hover:text-brand-navy font-medium transition-colors">{{t.not_found.nav_consulting}}</a>
+          <a href="/college-application/" class="text-brand-navy hover:text-brand-navy font-medium transition-colors">{{t.not_found.nav_application}}</a>
+          <a href="/high-school-application/" class="text-brand-navy hover:text-brand-navy font-medium transition-colors">{{t.not_found.nav_high_school}}</a>
+          <a href="/seminars/" class="text-brand-navy hover:text-brand-navy font-medium transition-colors">{{t.not_found.nav_seminars}}</a>
+          <a href="/about-us/" class="text-brand-navy hover:text-brand-navy font-medium transition-colors">{{t.not_found.nav_about}}</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

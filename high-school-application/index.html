@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.high_school.title}}</title>
+  <meta name="description" content="{{t.high_school.meta_description}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{t.high_school.title}}">
+  <meta property="og:description" content="{{t.high_school.meta_description}}">
+  <meta property="og:url" content="https://www.ivypi.org/high-school-application/">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta property="og:image" content="https://www.ivypi.org/assets/images/classroom.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{t.high_school.title}}">
+  <meta name="twitter:description" content="{{t.high_school.meta_description}}">
+  <meta name="twitter:image" content="https://www.ivypi.org/assets/images/classroom.jpeg">
+  <link rel="canonical" href="https://www.ivypi.org/high-school-application/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "/high-school-application/",
+        "url": "/high-school-application/",
+        "name": "{{t.high_school.jsonld_page_name}}",
+        "isPartOf": { "@id": "/#website" },
+        "primaryImageOfPage": { "@id": "/high-school-application/#primaryimage" },
+        "image": { "@id": "/high-school-application/#primaryimage" },
+        "thumbnailUrl": "/assets/images/classroom.jpeg",
+        "datePublished": "2023-08-09T19:44:45+00:00",
+        "dateModified": "2024-09-03T16:37:39+00:00",
+        "description": "{{t.high_school.meta_description}}",
+        "breadcrumb": { "@id": "/high-school-application/#breadcrumb" },
+        "inLanguage": "en-US",
+        "potentialAction": [{ "@type": "ReadAction", "target": ["/high-school-application/"] }]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "/high-school-application/#primaryimage",
+        "url": "/assets/images/classroom.jpeg",
+        "contentUrl": "/assets/images/classroom.jpeg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/high-school-application/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          { "@type": "ListItem", "position": 2, "name": "{{t.high_school.jsonld_breadcrumb}}" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "{{t.home.jsonld_org_name}}",
+        "description": "{{t.home.jsonld_site_description}}",
+        "publisher": { "@id": "/#organization" },
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "/?s={search_term_string}" },
+          "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+        }],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "{{t.home.jsonld_org_name}}",
+        "alternateName": "{{t.home.jsonld_org_alt}}",
+        "url": "/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "/#/schema/logo/image/",
+          "url": "/assets/images/logo.jpg",
+          "contentUrl": "/assets/images/logo.jpg",
+          "width": 1200,
+          "height": 446,
+          "caption": "{{t.home.jsonld_org_name}}"
+        },
+        "image": { "@id": "/#/schema/logo/image/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-jost text-gray-800 bg-white body-loading">
+
+  <div id="header-placeholder"></div>
+
+  <!-- Characteristics of Private Schools -->
+  <section class="py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy text-center mb-10">{{t.high_school.characteristics_heading}}</h3>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/classroom.webp" alt="{{t.high_school.char_1}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.char_1}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/funding.webp" alt="{{t.high_school.char_2}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.char_2}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/music.webp" alt="{{t.high_school.char_3}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.char_3}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/studying.webp" alt="{{t.high_school.char_4}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.char_4}}</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Ranked Private High Schools -->
+  <section class="py-24 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl md:text-3xl font-jost font-light text-brand-navy text-center mb-10">{{t.high_school.top_schools_heading}}</h3>
+
+      <!-- In the U.S. -->
+      <div class="mb-12" data-carousel>
+        <h4 class="text-xl font-semibold text-center mb-6">
+          <a href="https://www.niche.com/k12/search/best-private-high-schools/" class="text-brand-navy hover:underline" target="_blank" rel="noopener">{{t.high_school.us_schools}}</a>
+        </h4>
+        <div class="relative">
+          <div data-carousel-track class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-2" style="scrollbar-width: none;">
+            <a href="https://www.andover.edu/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-phillips-andover.webp" alt="{{t.high_school.school_phillips_andover}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_phillips_andover}}</span>
+            </a>
+            <a href="https://www.hw.com/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-harvard-westlake.webp" alt="{{t.high_school.school_harvard_westlake}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_harvard_westlake}}</span>
+            </a>
+            <a href="https://www.choate.edu/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-choate.webp" alt="{{t.high_school.school_choate}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_choate}}</span>
+            </a>
+            <a href="https://www.exeter.edu/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-phillips-exeter.webp" alt="{{t.high_school.school_phillips_exeter}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_phillips_exeter}}</span>
+            </a>
+            <a href="https://www.groton.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-groton.webp" alt="{{t.high_school.school_groton}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_groton}}</span>
+            </a>
+            <a href="https://www.trinityschoolnyc.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-trinity.webp" alt="{{t.high_school.school_trinity}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_trinity}}</span>
+            </a>
+          </div>
+          <button data-carousel-prev class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-gray-100 transition-colors z-10">&larr;</button>
+          <button data-carousel-next class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-gray-100 transition-colors z-10">&rarr;</button>
+        </div>
+      </div>
+
+      <!-- In California -->
+      <div data-carousel>
+        <h4 class="text-xl font-semibold text-center mb-6">
+          <a href="https://www.niche.com/k12/search/best-private-high-schools/s/california/" class="text-brand-navy hover:underline" target="_blank" rel="noopener">{{t.high_school.ca_schools}}</a>
+        </h4>
+        <div class="relative">
+          <div data-carousel-track class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-2" style="scrollbar-width: none;">
+            <a href="https://www.hw.com/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-harvard-westlake.webp" alt="{{t.high_school.school_harvard_westlake}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_harvard_westlake}}</span>
+            </a>
+            <a href="https://www.college-prep.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-college-prep.webp" alt="{{t.high_school.school_college_prep}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_college_prep}}</span>
+            </a>
+            <a href="https://www.nuevaschool.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-nueva.webp" alt="{{t.high_school.school_nueva}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_nueva}}</span>
+            </a>
+            <a href="https://onlinehighschool.stanford.edu/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-stanford-online.webp" alt="{{t.high_school.school_stanford_online}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_stanford_online}}</span>
+            </a>
+            <a href="https://www.csus.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-crystal-springs.webp" alt="{{t.high_school.school_crystal_springs}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_crystal_springs}}</span>
+            </a>
+            <a href="https://www.castilleja.org/" target="_blank" rel="noopener" class="snap-center shrink-0 w-40 flex flex-col items-center bg-white rounded-md shadow-sm p-4 hover:shadow-md transition-shadow">
+              <img src="/assets/images/school-castilleja.webp" alt="{{t.high_school.school_castilleja}}" class="w-24 h-24 object-contain mb-3" loading="lazy">
+              <span class="text-sm font-medium text-center">{{t.high_school.school_castilleja}}</span>
+            </a>
+          </div>
+          <button data-carousel-prev class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-gray-100 transition-colors z-10">&larr;</button>
+          <button data-carousel-next class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-gray-100 transition-colors z-10">&rarr;</button>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-500 text-center mt-6">{{t.high_school.niche_source}}</p>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-16 px-4" data-animate>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-xl md:text-2xl font-medium text-brand-navy italic leading-relaxed">
+        {{t.high_school.quote_1}}
+      </p>
+    </div>
+  </section>
+
+  <!-- What we can do for you -->
+  <section class="py-24 px-4 bg-gray-50" data-animate>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif-display font-normal text-brand-navy text-center mb-10">{{t.high_school.services_heading}}</h2>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/hs-planning.webp" alt="{{t.high_school.service_1}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.service_1}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/forms.webp" alt="{{t.high_school.service_2}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.service_2}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/help.webp" alt="{{t.high_school.service_3}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.service_3}}</h4>
+        </div>
+        <div class="brand-card border border-gray-200 rounded-lg overflow-hidden shadow-sm" data-animate>
+          <img src="/assets/images/hs-interview.webp" alt="{{t.high_school.service_4}}" class="w-full h-48 object-cover" loading="lazy">
+          <h4 class="text-lg font-semibold text-center py-4 px-3">{{t.high_school.service_4}}</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-16 px-4" data-animate>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-xl md:text-2xl font-medium text-brand-navy italic leading-relaxed">
+        {{t.high_school.quote_2}}
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24 px-6 bg-gray-50" data-animate>
+    <div data-component="pricing"
+         data-heading="{{t.high_school.pricing_heading}}"
+         data-text="{{t.high_school.pricing_text}}"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-24 px-6" data-animate>
+    <div id="contact-placeholder"></div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

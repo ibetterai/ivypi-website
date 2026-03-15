@@ -1,0 +1,45 @@
+<div class="max-w-5xl mx-auto grid md:grid-cols-[2fr_3fr] gap-8">
+  <!-- Reach Us -->
+  <div>
+    <h4 class="text-2xl font-jost font-light text-brand-navy mb-6">{{t.contact.reach_us}}</h4>
+    <div class="mb-5">
+      <h6 class="font-semibold text-gray-700">{{t.contact.email_label}}</h6>
+      <p class="text-gray-600"><a href="mailto:support@ivypi.org" class="hover:text-brand-navy transition-colors">support@ivypi.org</a></p>
+    </div>
+    <div>
+      <h6 class="font-semibold text-gray-700">{{t.contact.phone_label}}</h6>
+      <p class="text-gray-600"><a href="tel:+18402409109" class="hover:text-brand-navy transition-colors">+1 (840)-240-9109</a></p>
+    </div>
+  </div>
+  <!-- Contact Form -->
+  <div>
+    <h3 class="text-xl md:text-2xl font-jost font-light text-brand-navy mb-2">{{t.contact.form_heading}}</h3>
+    <hr class="border-brand-blue border-t-2 mb-6">
+    <form id="contact-form" class="space-y-4">
+      <input type="hidden" name="access_key" value="382cbcbd-f792-43c0-be1d-47525bc535e0">
+      <input type="hidden" name="subject" value="New Contact Form Submission from IvyPi">
+      <input type="hidden" name="from_name" value="IvyPi Website">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">{{t.contact.first_name_label}} <span class="text-red-500">*</span></label>
+          <input type="text" id="first_name" name="first_name" placeholder="{{t.contact.first_name_placeholder}}" required autocomplete="given-name" class="w-full border border-gray-300 rounded px-4 py-2.5 focus:ring-2 focus:ring-brand-navy focus:border-brand-navy outline-none transition">
+        </div>
+        <div>
+          <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">{{t.contact.last_name_label}} <span class="text-red-500">*</span></label>
+          <input type="text" id="last_name" name="last_name" placeholder="{{t.contact.last_name_placeholder}}" required autocomplete="family-name" class="w-full border border-gray-300 rounded px-4 py-2.5 focus:ring-2 focus:ring-brand-navy focus:border-brand-navy outline-none transition">
+        </div>
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{t.contact.email_field_label}}</label>
+        <input type="email" id="email" name="email" placeholder="{{t.contact.email_placeholder}}" required autocomplete="email" class="w-full border border-gray-300 rounded px-4 py-2.5 focus:ring-2 focus:ring-brand-navy focus:border-brand-navy outline-none transition">
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">{{t.contact.message_label}} <span class="text-red-500">*</span></label>
+        <textarea id="message" name="message" rows="4" placeholder="{{t.contact.message_placeholder}}" required class="w-full border border-gray-300 rounded px-4 py-2.5 focus:ring-2 focus:ring-brand-navy focus:border-brand-navy outline-none transition"></textarea>
+      </div>
+      <button type="submit" class="bg-brand-navy text-white font-medium px-8 py-3 rounded hover:bg-brand-navy-800 transition">{{t.contact.submit}}</button>
+    </form>
+    <div id="form-success" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded">{{t.contact.success}}</div>
+    <div id="form-error" class="hidden mt-4 p-4 bg-red-50 text-red-700 rounded">{{t.contact.error}}</div>
+  </div>
+</div>

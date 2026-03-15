@@ -1,0 +1,36 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "Static website for IvyPi Consulting - A professional college consulting firm.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/tailwind.css --minify",
+    "build:html": "node scripts/build-html.js",
+    "build": "npm run build:css && npm run build:html",
+    "watch:css": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/tailwind.css --watch",
+    "dev": "npm run build && npx http-server dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:pages": "node scripts/test-pages.js",
+    "validate:i18n": "node scripts/validate-i18n.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvyPi-College-Consulting/ivypi-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IvyPi-College-Consulting/ivypi-website/issues"
+  },
+  "homepage": "https://github.com/IvyPi-College-Consulting/ivypi-website#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.0",
+    "http-server": "^14.1.1",
+    "js-yaml": "^4.1.1",
+    "prettier": "^3.7.1",
+    "puppeteer": "^24.30.0",
+    "tailwindcss": "^4.2.0"
+  }
+}

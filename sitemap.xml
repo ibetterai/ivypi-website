@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.ivypi.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/college-consulting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/college-consulting/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/college-consulting/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/college-consulting/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/college-consulting/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/college-consulting/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/college-application/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/college-application/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/college-application/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/college-application/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/college-application/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/college-application/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/high-school-application/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/high-school-application/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/high-school-application/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/high-school-application/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/high-school-application/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/high-school-application/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/seminars/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/seminars/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/seminars/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/seminars/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/seminars/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/seminars/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/about-us/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/about-us/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/about-us/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/about-us/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/about-us/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/about-us/" />
+  </url>
+  <url>
+    <loc>https://www.ivypi.org/login/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ivypi.org/login/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.ivypi.org/zh-CN/login/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ivypi.org/es/login/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ivypi.org/ko/login/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ivypi.org/login/" />
+  </url>
+  <!-- Non-English locale URLs -->
+  <url><loc>https://www.ivypi.org/zh-CN/</loc></url>
+  <url><loc>https://www.ivypi.org/zh-CN/college-consulting/</loc></url>
+  <url><loc>https://www.ivypi.org/zh-CN/college-application/</loc></url>
+  <url><loc>https://www.ivypi.org/zh-CN/high-school-application/</loc></url>
+  <url><loc>https://www.ivypi.org/zh-CN/seminars/</loc></url>
+  <url><loc>https://www.ivypi.org/zh-CN/about-us/</loc></url>
+  <url><loc>https://www.ivypi.org/es/</loc></url>
+  <url><loc>https://www.ivypi.org/es/college-consulting/</loc></url>
+  <url><loc>https://www.ivypi.org/es/college-application/</loc></url>
+  <url><loc>https://www.ivypi.org/es/high-school-application/</loc></url>
+  <url><loc>https://www.ivypi.org/es/seminars/</loc></url>
+  <url><loc>https://www.ivypi.org/es/about-us/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/college-consulting/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/college-application/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/high-school-application/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/seminars/</loc></url>
+  <url><loc>https://www.ivypi.org/ko/about-us/</loc></url>
+  <url><loc>https://www.ivypi.org/privacy-policy/</loc></url>
+  <url><loc>https://www.ivypi.org/terms-of-service/</loc></url>
+</urlset>

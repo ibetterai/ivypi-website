@@ -1,0 +1,40 @@
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 shadow-sm transition-shadow duration-300 font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0">
+        <img src="/assets/images/logo.webp" alt="{{t.nav.logo_alt}}" class="h-12 w-auto">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1" id="desktop-nav">
+        <a href="/college-consulting/" data-page="college-consulting" class="nav-link px-4 py-2 rounded-md text-sm font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.college_consulting}}</a>
+        <a href="/college-application/" data-page="college-application" class="nav-link px-4 py-2 rounded-md text-sm font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.college_application}}</a>
+        <a href="/high-school-application/" data-page="high-school-application" class="nav-link px-4 py-2 rounded-md text-sm font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.middle_high_school}}</a>
+        <a href="/seminars/" data-page="seminars" class="nav-link px-4 py-2 rounded-md text-sm font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.seminars}}</a>
+        <a href="/about-us/" data-page="about-us" class="nav-link px-4 py-2 rounded-md text-sm font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.about_us}}</a>
+        <div id="auth-nav-slot" class="ml-2"></div>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors" aria-label="{{t.nav.open_menu}}" aria-expanded="false">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+      <a href="/college-consulting/" data-page="college-consulting" class="nav-link px-4 py-3 rounded-md text-base font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.college_consulting}}</a>
+      <a href="/college-application/" data-page="college-application" class="nav-link px-4 py-3 rounded-md text-base font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.college_application}}</a>
+      <a href="/high-school-application/" data-page="high-school-application" class="nav-link px-4 py-3 rounded-md text-base font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.middle_high_school_full}}</a>
+      <a href="/seminars/" data-page="seminars" class="nav-link px-4 py-3 rounded-md text-base font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.seminars}}</a>
+      <a href="/about-us/" data-page="about-us" class="nav-link px-4 py-3 rounded-md text-base font-normal text-gray-500 hover:text-[#044d76] transition-colors duration-200">{{t.nav.about_us}}</a>
+      <div id="auth-nav-slot-mobile" class="px-4 py-2"></div>
+    </nav>
+  </div>
+</header>
+<!-- Header spacer -->
+<div class="h-20"></div>
