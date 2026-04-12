@@ -1,6 +1,6 @@
 # IvyPi Marketing Site
 
-Static marketing site for IvyPi college consulting. Hosted on Cloudflare Pages at ivypi.org.
+Static marketing site for IvyPi college consulting. Hosted on Vercel at ivypi.org.
 
 ## Structure
 - 10 pages: index, college-consulting, college-application, high-school-application, seminars, about-us, blog, privacy-policy, terms-of-service, 404
@@ -32,9 +32,8 @@ Static marketing site for IvyPi college consulting. Hosted on Cloudflare Pages a
 ├── scripts/
 │   ├── build-html.js                   # Generates localized HTML into dist/
 │   └── validate-i18n.js                # Validates translation completeness
-├── dist/                               # Build output (deployed to Cloudflare)
-├── _headers                            # Cloudflare Pages security + caching headers
-├── _redirects                          # Cloudflare redirects (if present)
+├── dist/                               # Build output (deployed to Vercel)
+├── vercel.json                         # Vercel config: outputDirectory + security/cache headers
 ├── sitemap.xml                         # XML sitemap
 ├── robots.txt                          # Robots crawl rules
 ├── tailwind.config.js                  # Tailwind configuration
@@ -78,7 +77,7 @@ npm run watch:css   # Auto-recompile CSS on changes
 - IntersectionObserver for scroll animations, rAF throttling for perf
 
 ## Security
-- **CSP header** in `_headers` — restricts script/style/connect sources
+- **CSP header** in `vercel.json` — restricts script/style/connect sources
 - **Security headers**: X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy
 - **Cookie consent** — GA4 only loads after explicit user consent (GDPR compliance)
 - No inline scripts in source (all in main.js); `'unsafe-inline'` in CSP for Tailwind/style attributes
@@ -87,14 +86,14 @@ npm run watch:css   # Auto-recompile CSS on changes
 - **Web3Forms** — Contact form submission
 - **Google Analytics (GA4)** — Analytics, gated behind cookie consent
 - **Google Fonts** — Typography (Jost, Poppins, DM Serif Display)
-- **Cloudflare Pages** — Hosting, CDN, security headers
+- **Vercel** — Hosting, CDN, security headers (configured in `vercel.json`)
 
 ## Deployment
-- Cloudflare Pages serves from `dist/`
-- Workflow: push to `Site-Cleanup` → auto-PR to `main` → Cloudflare deploys from `main`
+- Vercel serves from `dist/` (configured via `vercel.json#outputDirectory`)
+- Push to `main` → Vercel auto-deploys
+- Headers and caching live in `vercel.json#headers`
 - E2E tests via Playwright in separate repo (`ivypiorg/ivypi-website-tests`)
-- Caching: HTML 1hr (must-revalidate), assets/images/fonts 1yr immutable
-- Dashboard/login/admin routes: `Cache-Control: no-store`
+- Caching: HTML 1hr (must-revalidate, default for `/(.*)`), `/assets/*` 1yr immutable
 
 ## Key Patterns
 - Every page has `<div id="header-placeholder">` and `<div id="footer-placeholder">`

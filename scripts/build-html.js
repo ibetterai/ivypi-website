@@ -272,8 +272,8 @@ function build() {
     }
   }
 
-  // Copy _headers and sitemap.xml
-  for (const file of ['_headers', 'sitemap.xml', '_redirects']) {
+  // Copy sitemap.xml into dist (Vercel handles headers via vercel.json)
+  for (const file of ['sitemap.xml']) {
     const fp = path.join(ROOT, file);
     if (fs.existsSync(fp)) {
       fs.cpSync(fp, path.join(DIST, file));
