@@ -3,7 +3,7 @@
 Static marketing site for IvyPi college consulting. Hosted on Cloudflare Pages at ivypi.org.
 
 ## Structure
-- 9 pages: index, college-consulting, college-application, high-school-application, seminars, about-us, privacy-policy, terms-of-service, 404
+- 10 pages: index, college-consulting, college-application, high-school-application, seminars, about-us, blog, privacy-policy, terms-of-service, 404
 - 4 locales: English (default), Spanish, Korean, Simplified Chinese
 - Shared components: `components/header.html`, `components/footer.html`, `components/contact.html`
 
@@ -15,6 +15,7 @@ Static marketing site for IvyPi college consulting. Hosted on Cloudflare Pages a
 ├── high-school-application/index.html  # High School Application
 ├── seminars/index.html                 # Seminars
 ├── about-us/index.html                 # About Us
+├── blog/index.html                     # Blog
 ├── privacy-policy/index.html           # Privacy Policy (English only)
 ├── terms-of-service/index.html         # Terms of Service (English only)
 ├── 404.html                            # Custom 404 (English only)
