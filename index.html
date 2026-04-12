@@ -441,7 +441,21 @@
         </div>
       </section>
 
-      <!-- ═══ 6. CTA Banner ═══ -->
+      <!-- ═══ 6. News Section ═══ -->
+      <section id="news-section" class="hidden bg-white py-24" data-animate="fade-up">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-serif-display text-3xl md:text-4xl font-normal text-center text-brand-navy mb-4">{{t.blog.news_heading}}</h2>
+          <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-14"></div>
+          <div id="news-grid" class="grid md:grid-cols-5 gap-6"></div>
+          <div class="text-center mt-10">
+            <a href="/blog/" class="inline-flex items-center gap-1 text-brand-blue font-medium hover:text-brand-navy transition-colors">
+              {{t.blog.view_all}} &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 7. CTA Banner ═══ -->
       <section class="bg-brand-cta py-28">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h3 class="font-jost text-2xl md:text-3xl font-light text-white mb-4">{{t.home.cta_heading}}</h3>

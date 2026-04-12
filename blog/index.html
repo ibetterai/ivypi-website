@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.blog.title}}</title>
+  <meta name="description" content="{{t.blog.meta_description}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{t.blog.title}}">
+  <meta property="og:description" content="{{t.blog.meta_description}}">
+  <meta property="og:url" content="https://www.ivypi.org/blog/">
+  <meta property="og:site_name" content="IvyPi Consulting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{t.blog.title}}">
+  <meta name="twitter:description" content="{{t.blog.meta_description}}">
+  <link rel="canonical" href="https://www.ivypi.org/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" /></noscript>
+
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="icon" sizes="32x32" href="/assets/images/favicon-32.jpg">
+  <link rel="icon" sizes="192x192" href="/assets/images/favicon-192.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.jpg">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon-270.jpg">
+
+  <style>
+    .blog-content h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.75rem; color: #044d76; margin: 2rem 0 0.75rem; }
+    .blog-content h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.375rem; color: #044d76; margin: 1.5rem 0 0.5rem; }
+    .blog-content p { margin: 0 0 1rem; line-height: 1.75; color: #374151; }
+    .blog-content ul, .blog-content ol { margin: 0 0 1rem; padding-left: 1.5rem; color: #374151; }
+    .blog-content li { margin-bottom: 0.25rem; line-height: 1.75; }
+    .blog-content blockquote { border-left: 3px solid #01a2e8; padding-left: 1rem; margin: 1.5rem 0; color: #6b7280; font-style: italic; }
+    .blog-content img { max-width: 100%; border-radius: 8px; margin: 1.5rem 0; }
+    .blog-content a { color: #01a2e8; text-decoration: underline; }
+    .blog-content a:hover { color: #044d76; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "/blog/",
+        "url": "/blog/",
+        "name": "{{t.blog.title}}",
+        "isPartOf": { "@id": "/#website" },
+        "description": "{{t.blog.meta_description}}",
+        "breadcrumb": { "@id": "/blog/#breadcrumb" },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          { "@type": "ReadAction", "target": ["/blog/"] }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/blog/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+          { "@type": "ListItem", "position": 2, "name": "{{t.blog.blog_heading}}" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "{{t.home.jsonld_org_name}}",
+        "description": "{{t.home.jsonld_site_description}}",
+        "publisher": { "@id": "/#organization" },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "/?s={search_term_string}" },
+            "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "{{t.home.jsonld_org_name}}",
+        "alternateName": "{{t.home.jsonld_org_alt}}",
+        "url": "/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "/#/schema/logo/image/",
+          "url": "/assets/images/logo.jpg",
+          "contentUrl": "/assets/images/logo.jpg",
+          "width": 1200,
+          "height": 446,
+          "caption": "{{t.home.jsonld_org_name}}"
+        },
+        "image": { "@id": "/#/schema/logo/image/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-jost text-gray-800 bg-white body-loading">
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
+    <!-- Listing Mode -->
+    <section id="blog-listing">
+      <h2 class="text-4xl md:text-5xl font-serif-display font-normal text-brand-navy text-center mb-4">
+        {{t.blog.blog_heading}}
+      </h2>
+      <div class="w-16 h-1 bg-brand-blue rounded mx-auto mb-14"></div>
+      <div id="blog-grid" class="grid md:grid-cols-3 sm:grid-cols-2 gap-6"></div>
+      <div class="text-center mt-10">
+        <button id="blog-load-more" class="hidden inline-block bg-brand-navy hover:bg-brand-navy-800 text-white font-medium px-8 py-3 rounded transition-colors duration-200">
+          {{t.blog.load_more}}
+        </button>
+      </div>
+    </section>
+
+    <!-- Single Post Mode -->
+    <article id="blog-post" class="hidden">
+      <a href="/blog/" class="inline-flex items-center gap-1 text-brand-blue hover:text-brand-navy transition-colors mb-8 text-sm">
+        {{t.blog.back_to_news}}
+      </a>
+      <div id="blog-post-content"></div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Main JS -->
+  <script defer src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

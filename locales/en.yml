@@ -503,3 +503,19 @@ not_found:
   nav_high_school: "High School Application"
   nav_seminars: "Seminars"
   nav_about: "About Us"
+
+# ── Blog ──
+blog:
+  news_heading: "Latest News & Updates"
+  view_all: "View All Posts"
+  blog_heading: "News & Updates"
+  back_to_news: "← Back to News"
+  load_more: "Load More"
+  category_admissions: "Admissions"
+  category_student_story: "Student Story"
+  category_company: "Company"
+  category_seminars: "Seminars"
+  no_posts: "No posts yet. Check back soon!"
+  post_not_found: "Post not found."
+  title: "News & Updates - IvyPi Consulting"
+  meta_description: "Stay updated with the latest news, admissions insights, and student success stories from IvyPi Consulting."

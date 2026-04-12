@@ -503,3 +503,19 @@ not_found:
   nav_high_school: "고등학교 지원"
   nav_seminars: "세미나"
   nav_about: "회사 소개"
+
+# ── Blog ──
+blog:
+  news_heading: "최신 뉴스 및 업데이트"
+  view_all: "모든 게시물 보기"
+  blog_heading: "뉴스 및 업데이트"
+  back_to_news: "← 뉴스로 돌아가기"
+  load_more: "더 보기"
+  category_admissions: "입학 정보"
+  category_student_story: "학생 이야기"
+  category_company: "회사 소식"
+  category_seminars: "세미나"
+  no_posts: "아직 게시물이 없습니다. 곧 다시 확인해 주세요!"
+  post_not_found: "게시물을 찾을 수 없습니다."
+  title: "뉴스 및 업데이트 - IvyPi Consulting"
+  meta_description: "IvyPi Consulting의 최신 뉴스, 입학 정보, 학생 성공 사례를 확인하세요."

@@ -30,6 +30,7 @@ const PAGES = [
   'about-us/index.html',
   'privacy-policy/index.html',
   'terms-of-service/index.html',
+  'blog/index.html',
 ];
 
 // Internal link patterns to prefix for non-English locales
@@ -45,6 +46,7 @@ const INTERNAL_HREFS = [
   '/availability/',
   '/admin/',
   '/student/',
+  '/blog/',
 ];
 
 // ── Load Locale Files ──

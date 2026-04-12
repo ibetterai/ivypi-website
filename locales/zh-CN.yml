@@ -503,3 +503,19 @@ not_found:
   nav_high_school: "高中申请"
   nav_seminars: "讲座"
   nav_about: "关于我们"
+
+# ── Blog ──
+blog:
+  news_heading: "最新动态"
+  view_all: "查看所有文章"
+  blog_heading: "新闻动态"
+  back_to_news: "← 返回新闻"
+  load_more: "加载更多"
+  category_admissions: "招生资讯"
+  category_student_story: "学生故事"
+  category_company: "公司动态"
+  category_seminars: "讲座活动"
+  no_posts: "暂无文章，请稍后查看！"
+  post_not_found: "未找到该文章。"
+  title: "新闻动态 - IvyPi Consulting"
+  meta_description: "了解IvyPi Consulting的最新新闻、招生资讯和学生成功故事。"

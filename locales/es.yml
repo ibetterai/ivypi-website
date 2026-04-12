@@ -503,3 +503,19 @@ not_found:
   nav_high_school: "Aplicación a Preparatoria"
   nav_seminars: "Seminarios"
   nav_about: "Quiénes Somos"
+
+# ── Blog ──
+blog:
+  news_heading: "Últimas Noticias y Novedades"
+  view_all: "Ver Todas las Publicaciones"
+  blog_heading: "Noticias y Novedades"
+  back_to_news: "← Volver a Noticias"
+  load_more: "Cargar Más"
+  category_admissions: "Admisiones"
+  category_student_story: "Historia de Estudiante"
+  category_company: "Empresa"
+  category_seminars: "Seminarios"
+  no_posts: "Aún no hay publicaciones. ¡Vuelve pronto!"
+  post_not_found: "Publicación no encontrada."
+  title: "Noticias y Novedades - IvyPi Consulting"
+  meta_description: "Mantente al día con las últimas noticias, información sobre admisiones e historias de éxito de estudiantes de IvyPi Consulting."

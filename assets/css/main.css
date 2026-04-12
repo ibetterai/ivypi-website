@@ -4,6 +4,7 @@
 @source "../../*/index.html";
 @source "../../components/*.html";
 @source "../js/*.js";
+@source "../../blog/*.html";
 
 /* ── FOUC Prevention ── */
 .body-loading { opacity: 0; }
@@ -65,3 +66,7 @@ body { transition: opacity 0.3s ease; }
 /* ── Brand Card Hover ── */
 .brand-card { transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
 .brand-card:hover { box-shadow: 0 8px 24px rgba(4, 77, 118, 0.08); }
+
+/* ── News Card Hover ── */
+.news-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.news-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
