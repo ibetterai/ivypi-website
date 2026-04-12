@@ -7,6 +7,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self'
 
 # HTML files - shorter cache for frequent updates check
 /*.html

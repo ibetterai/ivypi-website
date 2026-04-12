@@ -30,12 +30,6 @@ const PAGES = [
   'about-us/index.html',
   'privacy-policy/index.html',
   'terms-of-service/index.html',
-  'login/index.html',
-  'dashboard/index.html',
-  'booking/index.html',
-  'availability/index.html',
-  'admin/index.html',
-  'student/index.html',
 ];
 
 // Internal link patterns to prefix for non-English locales
@@ -170,8 +164,8 @@ function setCanonical(html, page, locale) {
   }
 
   const canonical = locale === DEFAULT_LOCALE
-    ? pagePath
-    : `/${locale}${pagePath}`;
+    ? `${SITE_URL}${pagePath}`
+    : `${SITE_URL}/${locale}${pagePath}`;
 
   // Handle both href="..." and content="..." canonical patterns
   html = html.replace(

@@ -1,5 +1,8 @@
 /* IvyPi — main.js */
 
+/* ── Analytics Configuration ── */
+const GA_MEASUREMENT_ID = 'G-PQ0WS1ZJ0C';
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadComponents();
   document.body.classList.remove('body-loading');
@@ -9,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScrollAnimations();
   initLanguageSelector();
   highlightCurrentPage();
+  initCookieConsent();
 
   renderTemplateComponents();
 
@@ -337,4 +341,44 @@ function initLogoSaturationWave() {
 
   step();
   setInterval(step, DELAY);
+}
+
+/* ── Cookie Consent ── */
+function initCookieConsent() {
+  const banner = document.getElementById('cookie-consent');
+  if (!banner) return;
+
+  const consent = localStorage.getItem('ivypi_cookie_consent');
+  if (consent === 'accepted') { loadAnalytics(); return; }
+  if (consent === 'declined') return;
+
+  // No choice yet — show banner
+  banner.classList.remove('hidden');
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem('ivypi_cookie_consent', 'accepted');
+    banner.classList.add('hidden');
+    loadAnalytics();
+  });
+
+  document.getElementById('cookie-decline')?.addEventListener('click', () => {
+    localStorage.setItem('ivypi_cookie_consent', 'declined');
+    banner.classList.add('hidden');
+  });
+}
+
+/* ── Google Analytics (GA4) — loaded only after consent ── */
+function loadAnalytics() {
+  if (!GA_MEASUREMENT_ID) return;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
 }
