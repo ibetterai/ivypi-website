@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (document.getElementById('contact-form')) initContactForm();
   if (document.getElementById('testimonial-carousel')) initTestimonialCarousel();
   if (document.querySelectorAll('.school-logo').length > 1) initLogoSaturationWave();
+  if (document.getElementById('news-section')) initNewsCarousel();
+  if (document.getElementById('blog-grid')) initBlogPage();
 });
 
 /* ── Component Loader (dev fallback — skipped when build-injected) ── */
@@ -381,4 +383,192 @@ function loadAnalytics() {
   window.gtag = gtag;
   gtag('js', new Date());
   gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+}
+
+/* ── Blog API ── */
+const BLOG_API = 'https://gybkzyjtqhvxbuqzqanp.supabase.co/functions/v1/get-blog-posts';
+
+/** Escape a string for safe insertion into HTML (prevents XSS). */
+function escHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str || '';
+  return d.innerHTML;
+}
+
+const CATEGORY_LABELS = {
+  admissions: 'Admissions',
+  student_story: 'Student Story',
+  company: 'Company',
+  seminars: 'Seminars'
+};
+
+function formatPostDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+/* ── News Carousel (Homepage) ── */
+async function initNewsCarousel() {
+  const section = document.getElementById('news-section');
+  const grid = document.getElementById('news-grid');
+  if (!section || !grid) return;
+
+  try {
+    const res = await fetch(`${BLOG_API}?limit=3&featured_first=true`);
+    if (!res.ok) return;
+    const data = await res.json();
+    const posts = data.posts;
+    if (!posts || !posts.length) return;
+
+    const featured = posts[0];
+    const smaller = posts.slice(1, 3);
+
+    const categoryTag = (cat) => {
+      const label = CATEGORY_LABELS[cat] || cat || '';
+      return label ? `<span class="inline-block bg-brand-blue/10 text-brand-blue text-xs font-medium px-2 py-1 rounded">${escHtml(label)}</span>` : '';
+    };
+
+    const featuredBg = featured.featured_image_url
+      ? `background-image: url('${encodeURI(featured.featured_image_url)}'); background-size: cover; background-position: center;`
+      : 'background: linear-gradient(135deg, #9DC3D5 0%, #044d76 100%);';
+
+    const featuredCard = `
+      <a href="/blog/?post=${encodeURIComponent(featured.slug)}" class="news-card md:col-span-3 relative rounded-lg overflow-hidden min-h-[360px] flex flex-col justify-end no-underline group" style="${featuredBg}">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+        <div class="relative p-6 md:p-8">
+          ${categoryTag(featured.category)}
+          <h3 class="font-serif-display text-2xl md:text-3xl text-white mt-3 mb-2 group-hover:underline">${escHtml(featured.title)}</h3>
+          <p class="text-white/80 text-sm line-clamp-2">${escHtml(featured.excerpt)}</p>
+        </div>
+      </a>`;
+
+    const smallerCards = smaller.length
+      ? `<div class="md:col-span-2 flex flex-col gap-6">
+          ${smaller.map(p => `
+            <a href="/blog/?post=${encodeURIComponent(p.slug)}" class="news-card bg-white rounded-lg shadow border border-gray-200 overflow-hidden no-underline group flex-1 flex flex-col">
+              <div class="p-5 flex flex-col flex-1">
+                ${categoryTag(p.category)}
+                <h3 class="font-serif-display text-lg text-brand-navy mt-2 mb-1 group-hover:underline">${escHtml(p.title)}</h3>
+                <p class="text-xs text-gray-400 mb-2">${formatPostDate(p.published_at)}</p>
+                <p class="text-sm text-gray-600 line-clamp-2">${escHtml(p.excerpt)}</p>
+              </div>
+            </a>
+          `).join('')}
+        </div>`
+      : '';
+
+    grid.innerHTML = featuredCard + smallerCards;
+    section.classList.remove('hidden');
+  } catch {
+    // Section stays hidden on error
+  }
+}
+
+/* ── Blog Page (Listing + Single Post) ── */
+async function initBlogPage() {
+  const grid = document.getElementById('blog-grid');
+  const loadMoreBtn = document.getElementById('blog-load-more');
+  const postContainer = document.getElementById('blog-post');
+  const postContent = document.getElementById('blog-post-content');
+  const listing = document.getElementById('blog-listing');
+  if (!grid) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('post');
+
+  if (slug && postContainer && postContent) {
+    // ── Single Post Mode ──
+    if (listing) listing.classList.add('hidden');
+    postContainer.classList.remove('hidden');
+
+    try {
+      const res = await fetch(`${BLOG_API}?slug=${encodeURIComponent(slug)}`);
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      const post = data.post;
+      if (!post) {
+        postContent.innerHTML = `<p class="text-gray-500 text-center py-12">Post not found.</p>`;
+        return;
+      }
+
+      const categoryLabel = CATEGORY_LABELS[post.category] || post.category || '';
+      const featuredImg = post.featured_image_url
+        ? `<img src="${encodeURI(post.featured_image_url)}" alt="${escHtml(post.title)}" class="w-full rounded-lg mb-8 max-h-[480px] object-cover" />`
+        : '';
+
+      // NOTE: body_html is rendered as raw HTML intentionally (rich content).
+      // It MUST be sanitised server-side (e.g. DOMPurify on the Edge Function)
+      // before being stored in Supabase to prevent stored-XSS.
+      postContent.innerHTML = `
+        ${featuredImg}
+        <div class="max-w-3xl mx-auto">
+          ${categoryLabel ? `<span class="inline-block bg-brand-blue/10 text-brand-blue text-xs font-medium px-2 py-1 rounded mb-3">${escHtml(categoryLabel)}</span>` : ''}
+          <p class="text-sm text-gray-400 mb-4">${formatPostDate(post.published_at)}</p>
+          <h1 class="font-serif-display text-3xl md:text-4xl text-brand-navy mb-6">${escHtml(post.title)}</h1>
+          <div class="blog-content">${post.body_html || ''}</div>
+        </div>`;
+
+      document.title = `${post.title} - IvyPi Consulting`;
+    } catch {
+      postContent.innerHTML = `<p class="text-gray-500 text-center py-12">Post not found.</p>`;
+    }
+    return;
+  }
+
+  // ── Listing Mode ──
+  let offset = 0;
+  const limit = 20;
+
+  async function loadPosts() {
+    try {
+      const res = await fetch(`${BLOG_API}?limit=${limit}&offset=${offset}`);
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      const posts = data.posts;
+      if (!posts || !posts.length) {
+        if (offset === 0) {
+          grid.innerHTML = `<p class="text-gray-500 text-center py-12 col-span-full">No posts yet. Check back soon!</p>`;
+        }
+        if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
+        return;
+      }
+
+      const cards = posts.map(p => {
+        const categoryLabel = CATEGORY_LABELS[p.category] || p.category || '';
+        const img = p.featured_image_url
+          ? `<div class="h-44 overflow-hidden"><img src="${encodeURI(p.featured_image_url)}" alt="${escHtml(p.title)}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" loading="lazy" /></div>`
+          : `<div class="h-44 bg-gradient-to-br from-brand-light to-brand-muted"></div>`;
+        return `
+          <a href="/blog/?post=${encodeURIComponent(p.slug)}" class="news-card bg-white rounded-lg shadow border border-gray-200 overflow-hidden no-underline group">
+            ${img}
+            <div class="p-5">
+              ${categoryLabel ? `<span class="inline-block bg-brand-blue/10 text-brand-blue text-xs font-medium px-2 py-1 rounded mb-2">${escHtml(categoryLabel)}</span>` : ''}
+              <h3 class="font-serif-display text-lg text-brand-navy mb-1 group-hover:underline">${escHtml(p.title)}</h3>
+              <p class="text-xs text-gray-400 mb-2">${formatPostDate(p.published_at)}</p>
+              <p class="text-sm text-gray-600 line-clamp-3">${escHtml(p.excerpt)}</p>
+            </div>
+          </a>`;
+      }).join('');
+
+      grid.insertAdjacentHTML('beforeend', cards);
+      offset += posts.length;
+
+      if (loadMoreBtn) {
+        if (posts.length >= limit) {
+          loadMoreBtn.classList.remove('hidden');
+        } else {
+          loadMoreBtn.classList.add('hidden');
+        }
+      }
+    } catch {
+      if (offset === 0) {
+        grid.innerHTML = `<p class="text-gray-500 text-center py-12 col-span-full">No posts yet. Check back soon!</p>`;
+      }
+    }
+  }
+
+  await loadPosts();
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', loadPosts);
+  }
 }
