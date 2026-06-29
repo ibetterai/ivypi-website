@@ -1,6 +1,6 @@
 # IvyPi Marketing Site
 
-Static marketing site for IvyPi college consulting. Hosted on Vercel at ivypi.org.
+Static marketing site for IvyPi college consulting. Hosted on **Cloudflare Pages** at ivypi.org.
 
 ## Structure
 - 10 pages: index, college-consulting, college-application, high-school-application, seminars, about-us, blog, privacy-policy, terms-of-service, 404
@@ -89,11 +89,15 @@ npm run watch:css   # Auto-recompile CSS on changes
 - **Vercel** — Hosting, CDN, security headers (configured in `vercel.json`)
 
 ## Deployment
-- Vercel serves from `dist/` (configured via `vercel.json#outputDirectory`)
-- Push to `main` → Vercel auto-deploys
-- Headers and caching live in `vercel.json#headers`
+- **Cloudflare Pages** serves from `dist/` (project: `ivypi-website`, account: IvyPi.org)
+- Code repo: `ibetterai/ivypi-website` on GitHub
+- Push to `main` → GitHub Actions → CF Pages auto-deploys (`.github/workflows/deploy.yml`)
+- Headers and caching live in `_headers` (copied to `dist/` at build time)
+- Caching: HTML 1hr (must-revalidate), `/assets/*` 1yr immutable
+- **DNS routing**: `ivypi-website-proxy` Worker on CF routes `www.ivypi.org/*` and `ivypi.org/*` to Pages
+  - Worker is in IvyPi.org CF account; routes live in zone `87ff0f1b82024dafea60426809bbf97f`
+  - TODO: once you have a CF token with dns_records:edit for IvyPi.org, switch to direct CNAME → `ivypi-website.pages.dev` and remove the proxy worker
 - E2E tests via Playwright in separate repo (`ivypiorg/ivypi-website-tests`)
-- Caching: HTML 1hr (must-revalidate, default for `/(.*)`), `/assets/*` 1yr immutable
 
 ## Key Patterns
 - Every page has `<div id="header-placeholder">` and `<div id="footer-placeholder">`
