@@ -89,14 +89,12 @@ npm run watch:css   # Auto-recompile CSS on changes
 - **Vercel** — Hosting, CDN, security headers (configured in `vercel.json`)
 
 ## Deployment
-- **Cloudflare Pages** serves from `dist/` (project: `ivypi-website`, account: IvyPi.org)
+- **Cloudflare Pages** serves from `dist/` (project: `ivypi-website`, account: IvyPi.org `aeff434b2b74963276196041a83e4803`)
 - Code repo: `ibetterai/ivypi-website` on GitHub
 - Push to `main` → GitHub Actions → CF Pages auto-deploys (`.github/workflows/deploy.yml`)
 - Headers and caching live in `_headers` (copied to `dist/` at build time)
 - Caching: HTML 1hr (must-revalidate), `/assets/*` 1yr immutable
-- **DNS routing**: `ivypi-website-proxy` Worker on CF routes `www.ivypi.org/*` and `ivypi.org/*` to Pages
-  - Worker is in IvyPi.org CF account; routes live in zone `87ff0f1b82024dafea60426809bbf97f`
-  - TODO: once you have a CF token with dns_records:edit for IvyPi.org, switch to direct CNAME → `ivypi-website.pages.dev` and remove the proxy worker
+- DNS: `www.ivypi.org` CNAME → `ivypi-website.pages.dev` (proxied), `ivypi.org` CNAME → `ivypi-website.pages.dev` (CF-flattened, proxied)
 - E2E tests via Playwright in separate repo (`ivypiorg/ivypi-website-tests`)
 
 ## Key Patterns
