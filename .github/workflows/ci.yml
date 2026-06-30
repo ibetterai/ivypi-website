@@ -3,6 +3,37 @@ on:
   pull_request:
   push:
     branches: [main]
+
+# Mirrors ibetterai/.github ci-reusable.yml (npm path) — inlined because
+# ibetterai/.github is private and GitHub blocks public repos from calling
+# private reusable workflows.
 jobs:
-  ci:
-    uses: ibetterai/.github/.github/workflows/ci-reusable.yml@main
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint --if-present
+      - run: npm run typecheck --if-present
+      - run: npm test --if-present -- --coverage
+      - run: npm run build
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks
+        run: |
+          VERSION=8.18.4
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${VERSION}/gitleaks_${VERSION}_linux_x64.tar.gz" | tar -xz -C /tmp gitleaks
+          CONFIG_ARG=""
+          if [ -f .gitleaks.toml ]; then
+            CONFIG_ARG="--config .gitleaks.toml"
+          fi
+          /tmp/gitleaks detect --source . $CONFIG_ARG --redact --no-banner --exit-code 1
