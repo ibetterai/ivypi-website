@@ -1,0 +1,8 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  ci:
+    uses: ibetterai/.github/.github/workflows/ci-reusable.yml@main
