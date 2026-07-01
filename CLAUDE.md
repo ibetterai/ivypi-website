@@ -94,7 +94,7 @@ npm run watch:css   # Auto-recompile CSS on changes
 - Push to `main` → GitHub Actions → CF Pages auto-deploys (`.github/workflows/deploy.yml`)
 - Headers and caching live in `_headers` (copied to `dist/` at build time)
 - Caching: HTML 1hr (must-revalidate), `/assets/*` 1yr immutable
-- DNS: `www.ivypi.org` CNAME → `ivypi-website.pages.dev` (proxied), `ivypi.org` CNAME → `ivypi-website.pages.dev` (CF-flattened, proxied)
+- DNS: `www.ivypi.org` CNAME → `ivypi-website-4ho.pages.dev` (proxied), `ivypi.org` CNAME → `ivypi-website-4ho.pages.dev` (CF-flattened, proxied)
 - E2E tests via Playwright in separate repo (`ivypiorg/ivypi-website-tests`)
 
 ## Key Patterns
