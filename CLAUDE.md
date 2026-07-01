@@ -89,7 +89,7 @@ npm run watch:css   # Auto-recompile CSS on changes
 - **Vercel** — Hosting, CDN, security headers (configured in `vercel.json`)
 
 ## Deployment
-- **Cloudflare Pages** serves from `dist/` (project: `ivypi-website`, account: IvyPi.org `aeff434b2b74963276196041a83e4803`)
+- **Cloudflare Pages** serves from `dist/` (project: `ivypi-website`, account: iBetterAI `c29ebafa0f19f8f48f5dca2b83dec315`)
 - Code repo: `ibetterai/ivypi-website` on GitHub
 - Push to `main` → GitHub Actions → CF Pages auto-deploys (`.github/workflows/deploy.yml`)
 - Headers and caching live in `_headers` (copied to `dist/` at build time)
